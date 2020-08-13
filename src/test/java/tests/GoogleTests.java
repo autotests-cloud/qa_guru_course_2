@@ -6,17 +6,21 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
-class GoogleTest {
+
+class GoogleTests {
+
     @Test
     void selenideSearchTest() {
         // Открыть google
         open("https://google.com");
 
         // Ввести Selenide в поиск
-        $(byName("q")).setValue("Selenide").pressEnter();
+        $(byName("q")).setValue("Selenide").pressEnter(); // кнопка логина
 
         // Проверить, что Selenide появился в результатах поиска
         $("html").shouldHave(text("ru.selenide.org"));
     }
+
 }
