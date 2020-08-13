@@ -25,7 +25,9 @@ class GoogleWithExecuteScriptTests {
 
         // Ввести Selenide в поиск
         $(byName("q")).shouldBe(visible);
-        executeJavaScript("$(\"[name='q']\").setAttribute(\"value\", \"123\")");
+        executeJavaScript("$(\"[name='q']\").setAttribute('value', '123')");
+//        executeJavaScript("document.getElementsByName('q').setAttribute('value', '123')");
+
         $(byName("q")).pressEnter(); // кнопка логина
 
         // Проверить, что Selenide появился в результатах поиска
