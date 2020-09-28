@@ -18,7 +18,7 @@ class GoogleTests {
         $(byName("q")).setValue("Selenide").pressEnter(); // кнопка логина
 
         // Проверить, что Selenide появился в результатах поиска
-        $("html").shouldHave(text("ru.selenide.org"));
+        $(".search-results").shouldHave(text("ru.selenide.org"));
     }
 
 }
